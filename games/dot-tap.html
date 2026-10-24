@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dot Tap</title>
+<style>body{margin:0;font-family:system-ui;background:#14122b;color:#fff;text-align:center;height:100vh;overflow:hidden}#hud{padding:10px;font-size:1.1rem}#arena{position:absolute;inset:48px 0 0}
+#dot{position:absolute;width:64px;height:64px;border-radius:50%;border:0;background:radial-gradient(#fff,#ff3d81);box-shadow:0 0 24px #ff3d81;cursor:pointer}
+#start{position:absolute;inset:0;margin:auto;width:190px;height:56px;font-size:1.2rem;border:0;border-radius:28px;background:#22d3ee;font-weight:700;cursor:pointer}</style></head>
+<body><div id="hud">Score: <b id="s">0</b> · Time: <b id="t">20</b></div><div id="arena"><button id="start">Start</button></div>
+<script>
+const a=document.getElementById("arena"),s=document.getElementById("s"),t=document.getElementById("t"),st=document.getElementById("start");let n,left,iv,d;
+function move(){d.style.left=Math.random()*(a.clientWidth-64)+"px";d.style.top=Math.random()*(a.clientHeight-64)+"px"}
+st.onclick=()=>{st.remove();n=0;left=20;s.textContent=0;t.textContent=20;d=document.createElement("button");d.id="dot";d.setAttribute("aria-label","Tap!");a.append(d);move();
+d.onclick=()=>{s.textContent=++n;move()};
+iv=setInterval(()=>{t.textContent=--left;if(left<=0){clearInterval(iv);d.remove();parent.postMessage({type:"score",value:n},"*");
+st.textContent="Play again ("+n+")";a.append(st)}},1000)};
+</script></body></html>

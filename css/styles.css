@@ -1,0 +1,40 @@
+:root{--bg:#14122b;--panel:#1f1c40;--text:#f4f3ff;--muted:#a9a6d6;--pink:#ff3d81;--cyan:#22d3ee;--yellow:#ffd23f;--violet:#8b5cf6;--r:18px}
+@media(prefers-color-scheme:light){:root{--bg:#f5f3ff;--panel:#fff;--text:#1b1740;--muted:#5b5790}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--cyan)}img,iframe{max-width:100%}
+.sr{position:absolute;left:-9999px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 5vw;background:linear-gradient(90deg,var(--violet),var(--pink));position:sticky;top:0;z-index:10}
+.logo{font-size:1.5rem;font-weight:800;color:#fff;text-decoration:none}.logo span{color:var(--yellow)}
+#nav{display:flex;gap:6px;flex-wrap:wrap}#nav a{color:#fff;text-decoration:none;padding:6px 12px;border-radius:99px;font-weight:600}#nav a:hover{background:#ffffff33}
+.nav-toggle{display:none;background:#ffffff33;color:#fff;border:0;border-radius:10px;font-size:1.4rem;padding:4px 12px;cursor:pointer}
+main{max-width:1200px;margin:auto;padding:20px 5vw}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:36px;border-radius:28px;color:#fff;min-height:260px}
+.hero h1{font-size:clamp(2rem,6vw,3.5rem);margin:.2em 0}.hero-emoji{font-size:clamp(5rem,16vw,10rem)}
+.tag{background:#0004;padding:4px 12px;border-radius:99px;font-size:.85rem}
+.btn{display:inline-block;background:var(--yellow);color:#1b1740;font-weight:800;padding:12px 28px;border-radius:99px;text-decoration:none;border:0;font-size:1.05rem;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 20px #0005}
+.search{display:flex;gap:8px;margin:20px 0}.field{flex:1;padding:12px 18px;border-radius:99px;border:2px solid var(--violet);background:var(--panel);color:var(--text);font-size:1rem;width:100%;font-family:inherit}
+textarea.field{border-radius:var(--r)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.chip{padding:8px 16px;border-radius:99px;background:var(--panel);color:var(--text);text-decoration:none;font-weight:600}
+a.chip:hover,.chip.on{background:var(--pink);color:#fff}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;align-content:start}
+.card{background:var(--panel);border-radius:var(--r);overflow:hidden;text-decoration:none;color:var(--text);transition:.25s}
+.card:hover,.card:focus-visible{transform:translateY(-6px) rotate(-1deg);box-shadow:0 12px 28px #0006}
+.thumb{height:120px;display:grid;place-items:center;font-size:3.2rem;position:relative}
+.badge{position:absolute;top:8px;right:8px;font-size:.7rem;font-style:normal;background:#000a;color:#fff;padding:2px 8px;border-radius:99px}
+.card-body{padding:10px 14px}.card-body h3{margin:0;font-size:1rem}.card-body p{margin:0;color:var(--muted);font-size:.85rem}
+.ad{display:grid;place-items:center;min-height:250px;border:2px dashed var(--muted);border-radius:var(--r);color:var(--muted);text-align:center;margin-bottom:16px}.ad small{display:block;text-transform:uppercase;letter-spacing:.1em}
+.panel{background:var(--panel);padding:18px;border-radius:var(--r);margin-bottom:16px}.panel ol{padding-left:20px;margin:0}
+.premium{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;padding:28px;border-radius:var(--r);margin:28px 0;text-align:center}
+.premium .btn[disabled]{opacity:.7;cursor:not-allowed}
+#stage{background:#000;border-radius:var(--r);min-height:420px;display:grid;place-items:center;overflow:hidden;margin-bottom:12px}
+#stage iframe{width:100%;height:520px;border:0;background:#000}
+.notice,.empty{padding:24px;text-align:center;color:var(--muted)}#stage .notice{color:#fff}
+.prose{max-width:760px}.site-footer{text-align:center;padding:28px 5vw;background:var(--panel);margin-top:40px}
+.site-footer nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.hero{flex-direction:column;text-align:center;padding:24px}}
+@media(max-width:640px){.nav-toggle{display:block}#nav{display:none;width:100%;flex-direction:column}#nav.open{display:flex}#stage iframe{height:420px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
